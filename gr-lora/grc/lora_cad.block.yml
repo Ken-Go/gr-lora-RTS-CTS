@@ -1,0 +1,27 @@
+id: lora_cad
+label: cad
+category: '[Lora]'
+
+templates:
+  imports: import lora
+  make: lora.cad(${spreading_factor}, ${fft_factor}, ${fs_bw_ratio})
+
+parameters:
+- id: spreading_factor
+  label: Spreading_factor
+  dtype: raw
+- id: fft_factor
+  label: Fft_factor
+  dtype: raw
+- id: fs_bw_ratio
+  label: Fs_bw_ratio
+  dtype: float
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+
+outputs:
+-   domain: message
+    id: CAD
+file_format: 1

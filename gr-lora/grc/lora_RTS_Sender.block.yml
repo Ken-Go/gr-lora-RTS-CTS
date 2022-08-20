@@ -1,0 +1,33 @@
+id: lora_RTS_Sender
+label: RTS Sender
+category: '[Lora]'
+templates:
+  imports: import lora
+  make: lora.RTS_Sender(${NodeId}, ${Duration})
+
+parameters:
+- id: NodeId
+  label: Nodeid
+  dtype: int
+
+- id: Duration
+  label: Duration
+  dtype: int
+
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+- domain: message
+  id: inmsg
+- domain: message
+  id: inCTS
+
+
+outputs:
+- label: out
+  domain: stream
+  dtype: complex
+- domain: message
+  id: outmsg
+file_format: 1
